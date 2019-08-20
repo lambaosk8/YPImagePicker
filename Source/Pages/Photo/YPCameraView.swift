@@ -56,13 +56,15 @@ class YPCameraView: UIView, UIGestureRecognizerDelegate {
         layout(
             0,
             |-sideMargin-previewViewContainer-sideMargin-|,
-            -2,
-            |progressBar|,
-            0,
-            |buttonsContainer|,
             0
         )
-        previewViewContainer.heightEqualsWidth()
+
+        layout(
+            |progressBar|,
+            0,
+            |buttonsContainer| ~ 100,
+            0
+        )
 
         overlayView?.followEdges(previewViewContainer)
 
